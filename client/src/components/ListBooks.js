@@ -10,7 +10,7 @@ const ListBooks = () => {
 
   const deleteBook =async (id) => {
     try {
-      const deleteBook = await fetch(`/books/${id}`,{
+      const deleteBook = await fetch(`http://localhost:5000/books/${id}`,{
         method:"DELETE"
       })
       setBooks(books.filter(book => book.book_id !== id));
@@ -21,7 +21,7 @@ const ListBooks = () => {
 
   const getBooks = async () => {
     try {
-       const response = await fetch("/books")
+       const response = await fetch("http://localhost:5000/books")
        const jsonData =  await response.json()
        console.log(jsonData);
        setBooks(jsonData)

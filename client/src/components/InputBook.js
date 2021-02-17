@@ -11,7 +11,7 @@ const InputBook =() => {
     e.preventDefault();
     try {
       const body = {title,image,description, writer};
-      const response =  await fetch ("/books",{
+      const response =  await fetch ("http://localhost:5000/books",{
       method: "POST",
        headers: {"Content-Type": "application/json"},
        body: JSON.stringify(body)

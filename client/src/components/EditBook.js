@@ -9,7 +9,7 @@ const EditBook =({book}) => {
     const updateDescription = async (e) => {
         try {
             const body ={description};
-            const response = await fetch(`/books/${book.book_id}`,{
+            const response = await fetch(`http://localhost:5000/books/${book.book_id}`,{
                 method: "PUT", 
                 headers:{"content-type": "application/json"},
                 body:JSON.stringify(body)
