@@ -39,30 +39,32 @@ const ListBooks = () => {
   return <Fragment> 
 
 
-<div className="listBooks">
+<div className="container">
      
       {books.map(book => (
-        <div>
-          <h4 className="mt-5">{book.title}</h4>
+        <div className= "item">
+          
+          <h4 className="mt-5"key={book.book_id}>{book.title}</h4>
           <br />
           <img height="150em" src={book.image} 
           alt="Book"/> 
           <br />
           {/* {book.description} */}
           <h5 className="mt-5">
-            By:{book.writer}
+            By: {book.writer}
           </h5>
           <br />
           {/* <ShowBook></ShowBook> */}
 
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Show Book
-</button>
+          Show Book
+        </button>
+        
 
 
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+     <div class="modal" id="myModal">
+       <div class="modal-dialog">
+        <div class="modal-content">
 
      
       {/* <div class="modal-header">
@@ -72,16 +74,24 @@ const ListBooks = () => {
 
      
       <div class="modal-body">
+        {/* <button type="button" class="btn btn-danger"  onClick={() =>
+          
+          EditBook(book.book_id) }>
+          update</button> */}
         <h4 className="mt-5">{book.title}</h4>
           <br />
         <img height="150em" src={book.image} 
           alt="Book"/> 
           <br/>
-        {book.description}
+         <p>{book.description}</p>
       </div>
 
       
       <div class="modal-footer">
+         <button type="button" class="btn btn-warning"  onClick={() =>
+          
+          deleteBook(book.book_id) }>
+          Delete</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
@@ -90,7 +100,9 @@ const ListBooks = () => {
 </div>
         </div>
       ))}
+      
     </div>
+    
   </Fragment>
 };
 

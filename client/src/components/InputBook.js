@@ -16,7 +16,7 @@ const InputBook =() => {
        headers: {"Content-Type": "application/json"},
        body: JSON.stringify(body)
       });
-      //  window.location = "/";
+       window.location = "/";
     } catch (err) {
       console.error(err.message)
     }
@@ -36,6 +36,7 @@ const InputBook =() => {
              {/* <button className ="btn btn-success">Add Book</button */}
               <input type ="text" className ="form-control"  placeholder="Writer" value ={writer} onChange={e => setWriter(e.target.value)}/>
              <button className ="btn btn-success">Add Book</button>
+              
              
            </form>
            
